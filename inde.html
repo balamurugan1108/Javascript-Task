@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+  <p id="first"> </p>
+  <p id="second"> </p>
+  <p id="third"> </p>
+    <script>
+      var  z=[5,6,7,3,13,45,32,66,88,1,7,9,0,22,8]
+     var   a=[];
+      var  b=[];
+       var c=[];
+        for (let index = 0; index < z.length; index++) {
+     
+          y = z.length/3;
+          if(index < y){
+            a.push(z[index]);
+          document.getElementById("first").innerText = a; 
+          }
+          else if (b.length == y) {
+            c.push(z[index]);
+            document.getElementById("second").innerText = c; 
+          } else {
+            b.push(z[index]);
+            document.getElementById("third").innerText = b; 
+          }
+
+            
+        }           
+    </script>
+</body>
+</html>
