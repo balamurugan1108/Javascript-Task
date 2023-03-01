@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        document.body.style.backgroundImage = "url('https://www.supercars.net/blog/wp-content/uploads/2020/09/wallpaperflare.com_wallpaper-1-1.jpg')";
+
+        var div = document.createElement("button")
+        div.innerHTML = "ADD";
+        document.body.appendChild(div).onclick = function () {
+            var a = document.createElement("input");
+            a.setAttribute("id", "firstinput");
+            a.setAttribute("type", "number");
+            document.body.appendChild(a).onkeypress = function (event) {
+                var codes = event.which ? event.which : event.keyCode;
+                if (codes > 31 && (codes < 48 || codes > 57));
+                return true;
+            };
+            
+            var b = document.createElement("input");
+            b.setAttribute("id", "secondinput");
+            document.body.appendChild(b).onkeypress = function (event) {
+                var codes = event.which ? event.which : event.keyCode;
+                if (codes > 31 && (codes < 42 || codes > 47)) ;
+                return true;
+            }
+
+            var c = document.createElement("input");
+            c.setAttribute("id", "thirdinput");
+            c.setAttribute("type", "number");
+            document.body.appendChild(c).onkeypress = function (event) {
+                var codes = event.which ? event.which : event.keyCode;
+                if (codes > 31 && (codes < 48 || codes > 57));
+                return true;
+            }
+
+
+            var d = document.createElement("button");
+            d.setAttribute("id", "fourbtn");
+            d.style.border = "none";
+            d.style.marginLeft = "10px";
+            d.innerText = "submit";
+            document.body.appendChild(d).onclick = function () {
+                var first = document.getElementById("firstinput").value;
+                var second = document.getElementById("secondinput").value;
+                var third = document.getElementById("thirdinput").value;
+
+                switch (second) {
+                    case '+':
+                        result = Number(first) + Number(third);
+                        document.getElementById("ShowValue").value = `${result}`;
+                        break;
+
+                    case '-':
+                        result = Number(first) - Number(third);
+                        document.getElementById("ShowValue").value = `${result}`;
+                        break;
+
+                    case '*':
+                        result = Number(first) * Number(third);
+                        document.getElementById("ShowValue").value = `${result}`;
+                        break;
+
+                    case '/':
+                        result =Number(first) / Number(third);
+                        document.getElementById("ShowValue").value = `${result}`;
+                        break;
+
+                    default:
+                        break;
+                }
+            };
+
+            var e = document.createElement("button");
+            e.setAttribute("class", "fifthinput");
+            e.style.marginLeft = "10px";
+            e.style.border = "none";
+            e.innerHTML = "cancel";
+            document.body.appendChild(e);
+
+            var Output = document.createElement("p")
+            Output.style.color = "white";
+            Output.innerHTML = "Output Value";
+            document.body.appendChild(Output);
+
+            var Value = document.createElement("input");
+            Value.setAttribute("id", "ShowValue");
+            document.body.appendChild(Value);
+        };
+    </script>
+</body>
+
+</html>
