@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+</head>
+
+<body>
+    <p>Enter the Number: <input id="num"><button onclick="task()">Check</button></p>
+    <script>
+        function task(arr, arr_size) {
+            debugger;
+            var even = 0;
+            var odd = 0;
+            var evencount = 0;
+            var oddcount = 0;
+            var num = parseInt(document.getElementById("num").value);
+            for (var x = 0; x <= num; x++) {
+                debugger;
+                if (x % 2 === 0) {
+                    even = even + x;
+                    document.write(x + " is even" + "<br/>");
+                    evencount++;
+                }
+                else {
+                    odd = odd + x;
+                    document.write(x + " is odd" + "<br/>");
+                    oddcount++;
+                }
+                total = even + odd;
+            }
+            document.write("number of even count is " + evencount + "<br/>");
+            document.write("number of odd  count is " + oddcount + "<br/>");
+
+
+
+            // document.write("number of  total even numbers" + "=> " + even + "<br/>");
+            // document.write("number of  total odd numbers" + "=> " + odd + "<br/>");
+            document.write("enter the total values" + "=> " + total);
+
+            var n = 1;
+            var strings = "";
+            for (let i = 0; i <= num; i++) {
+                for (let j = 1; j <= i; j++) {
+                    if (n > num) {
+                        break;
+                    }
+                    strings += n + " ";
+                    n++;
+                }
+                strings += "<br/>";
+
+            }
+            var a = strings;
+            document.write(a);
+
+        }
+
+    </script>
+</body>
+
+</html>
