@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+
+<body>
+    <script>
+        {
+            var a = document.createElement("h3");
+            a.innerText = "Enter a number";
+            document.body.appendChild(a);
+
+            var b = document.createElement("input");
+            b.setAttribute("id", "inputs");
+            b.setAttribute("type", "number");
+            document.body.appendChild(b).onkeypress = function (event) {
+                var codes = event.which ? event.which : event.keyCode;
+                if (codes > 31 && (codes < 48 || codes > 57));
+                return true;
+            }
+
+            var output = document.createElement("p");
+            output.setAttribute("id", "result");
+            document.body.appendChild(output);
+
+            var c = document.createElement("button");
+            c.innerHTML = "submit";
+            document.body.appendChild(c).onclick = function () {
+                debugger;
+                var num = document.getElementById("inputs").value;
+                var tables = "";
+                var d = 1;
+                do {
+                    for (let index = 1; index <= 10; index++) {
+                        tables += index + " " + "x" + " " + d + " " + "=" + " " + index * d + "</br>";
+                    }
+                    d++;
+                } while (d <= num);
+                document.getElementById("result").innerHTML = tables;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
